@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  notipy:
+    image: notipy:latest
+    build: .
+    ports:
+      - 9000:9000
+    secrets:
+      - cert
+      - key
+      - vapid_key_txt
+      - vapid_public_key_txt
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
+
+secrets:
+  cert:
+    external: true
+  key:
+    external: true
+  vapid_key_txt:
+    external: true
+  vapid_public_key_txt:
+    external: true
