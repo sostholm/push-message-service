@@ -12,7 +12,7 @@ from web_push import send_web_push
 
 
 async def web_push(request: Request):
-    body = request.json()
+    body = await request.json()
     assert 'subscription' in body
     assert 'text' in body
     
@@ -22,7 +22,7 @@ async def web_push(request: Request):
 
 
 routes = [
-    Route('/web-push', methods=['POST'])
+    Route('/web-push', web_push, methods=['POST'])
 ]
 
 middleware = [

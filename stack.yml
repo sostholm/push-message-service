@@ -10,10 +10,6 @@ services:
       - key
       - vapid_key_txt
       - vapid_public_key_txt
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://localhost:3100/loki/api/v1/push"
 
 secrets:
   cert:

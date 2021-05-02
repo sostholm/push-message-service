@@ -2,7 +2,6 @@ import json
 import os
 from retry import retry
 from pywebpush import webpush, WebPushException
-from util import get_secret
 
 VAPID_PRIVATE_KEY = None
 VAPID_PUBLIC_KEY = None
